@@ -101,13 +101,11 @@ class AfterloanAddEdit extends DetailUtil {
     }, {
       title: '发保合回收日期',
       field: 'fbhhsrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       title: '抵押日期',
       field: 'dyrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }];
     return this.buildDetail({
       fields,

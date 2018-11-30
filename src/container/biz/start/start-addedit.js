@@ -13,33 +13,28 @@ class StartAddEdit extends DetailUtil {
   render() {
     const fields = [{
       title: '区域负责人名称',
-      field: 'qyfzrmc',
-      required: true
+      field: 'qyfzrmc'
     }, {
       title: '汽车种类',
       field: 'qczl',
       type: 'select',
-      key: 'car_type',
-      required: true
+      key: 'car_type'
     }, {
       title: '客户姓名',
-      field: 'khmc',
-      required: true
+      field: 'khmc'
     }, {
       title: '贷款金额(元)',
       field: 'dkje',
-      amount: true,
-      required: true
+      value: 0,
+      amount: true
     }, {
       title: '综合利率(%)',
       field: 'zhll',
-      formatter: (v) => v ? (v * 100).toFixed(2) : '',
-      required: true
+      formatter: (v) => v ? (v * 100).toFixed(2) : ''
     }, {
       title: '打款日期',
       field: 'dkrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       field: 'qdf',
       hidden: true

@@ -22,9 +22,6 @@ import { listWrapper } from 'common/js/build-list';
 class Afterloan extends React.Component {
   render() {
     const fields = [{
-      title: '业务编号',
-      field: 'code'
-    }, {
       title: '区域负责人名称',
       field: 'qyfzrmc'
     }, {
@@ -56,6 +53,11 @@ class Afterloan extends React.Component {
       title: '抵押日期',
       field: 'dyrq',
       type: 'date'
+    }, {
+      title: '温州垫资日期',
+      field: 'wzdzrq',
+      type: 'date',
+      noVisible: true
     }];
     return this.props.buildList({
       fields,

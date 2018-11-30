@@ -175,7 +175,6 @@ export default class ListComponent extends React.Component {
     // 导出表单
     handleExport() {
         this.props.doFetching();
-        let url = window.location.pathname;
         fetch(this.options.pageCode, {
             start: 1,
             limit: 1000000,
@@ -433,15 +432,9 @@ export default class ListComponent extends React.Component {
             onChange: this.onSelectChange,
             type: this.options.singleSelect ? 'radio' : 'checkbox'
         };
-        let useData = this.props.tableList;
-
         // noSelect为true时 列表不可选
         if (this.options.noSelect) {
             rowSelection = null;
-        }
-        // 月度业绩用
-        if (this.options.userDataAfter) {
-            useData = this.options.userDataAfter(useData);
         }
         return (
             <div>
@@ -458,22 +451,41 @@ export default class ListComponent extends React.Component {
                     ))}
                 </div>
                 <div className="table-wrapper">
-                    <Table
-                        bordered
-                        rowSelection={rowSelection}
-                        columns={this.columns}
-                        rowKey={record => record[this.options.rowKey]}
-                        dataSource={useData}
-                        pagination={this.props.pagination}
-                        loading={this.props.fetching}
-                        onChange={this.handleTableChange}
-                        onRowClick={this.handleRowClick}
-                    />
+                    <Table {...this.getTableProps(rowSelection)}/>
                 </div>
             </div>
         );
     }
-
+    getTableProps(rowSelection) {
+      let props = {
+        bordered: true,
+        rowSelection: rowSelection,
+        columns: this.columns,
+        rowKey: record => record[this.options.rowKey],
+        dataSource: this.props.tableList,
+        pagination: this.props.pagination,
+        loading: this.props.fetching,
+        onChange: this.handleTableChange,
+        onRowClick: this.handleRowClick
+      };
+      if (!this.props.fetching && this.options.footer) {
+        let result = {};
+        this.options.footer.forEach(f => {
+          let count = 0;
+          this.props.tableList.forEach(t => count += (t[f.field] || 0));
+          if (f.type === 'amount') {
+            count = moneyFormat(count);
+          }
+          result[f.field] = count;
+        });
+        props.footer = () => (
+          <div>
+            {this.options.footer.map(f => <span style={{marginRight: 20}} key={f.field}>{`${f.title}: ${result[f.field]}`}</span>)}
+          </div>
+        );
+      }
+      return props;
+    }
     getSearchFields(fields) {
         const {getFieldDecorator} = this.props.form;
         const children = [];
@@ -529,23 +541,6 @@ export default class ListComponent extends React.Component {
             )) : null}
         </Select>;
     }
-
-    // getSearchSelectItem(item) {
-    //     return <Select
-    //         mode="combobox"
-    //         showArrow={false}
-    //         filterOption={false}
-    //         onSearch={v => this.searchSelectChange(v, item)}
-    //         optionLabelProp="children"
-    //         style={{width: 200}}
-    //         placeholder="请输入关键字搜索">
-    //         {item.data ? item.data.map(d => (
-    //             <Option key={d[item.keyName]} value={d[item.keyName]}>
-    //                 {d[item.valueName] ? d[item.valueName] : tempString(item.valueName, d)}
-    //             </Option>
-    //         )) : null}
-    //     </Select>;
-    // }
     // 获取搜索框类型的控件
     getSearchSelectItem(item) {
       const props = {

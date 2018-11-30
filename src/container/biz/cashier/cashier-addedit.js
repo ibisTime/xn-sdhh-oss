@@ -72,18 +72,18 @@ class CashierAddEdit extends DetailUtil {
     }, {
       title: '渠道费(元)',
       field: 'qdf',
-      amount: true,
-      required: true
+      value: 0,
+      amount: true
     }, {
       title: '绩效(元)',
       field: 'jx',
-      amount: true,
-      required: true
+      value: 0,
+      amount: true
     }, {
       title: '其他利润(元)',
       field: 'qtlr',
-      amount: true,
-      required: true
+      value: 0,
+      amount: true
     }, {
       field: 'yhfkrq',
       type: 'date',

@@ -81,28 +81,23 @@ class AccountingAddEdit extends DetailUtil {
     }, {
       title: '银行放款日期',
       field: 'yhfkrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       title: '公司回款日期',
       field: 'gshkrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       title: '温州垫资日期',
       field: 'wzdzrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       title: '打件日期',
       field: 'djrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       title: '调额日期',
       field: 'terq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       field: 'fbhhsrq',
       type: 'date',

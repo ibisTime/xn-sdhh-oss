@@ -22,9 +22,6 @@ import { listWrapper } from 'common/js/build-list';
 class Accounting extends React.Component {
   render() {
     const fields = [{
-      title: '业务编号',
-      field: 'code'
-    }, {
       title: '区域负责人名称',
       field: 'qyfzrmc'
     }, {

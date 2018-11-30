@@ -22,9 +22,6 @@ import { listWrapper } from 'common/js/build-list';
 class Finished extends React.Component {
   render() {
     const fields = [{
-      title: '业务编号',
-      field: 'code'
-    }, {
       title: '区域负责人名称',
       field: 'qyfzrmc'
     }, {
@@ -57,14 +54,58 @@ class Finished extends React.Component {
       field: 'dzlx',
       amount: true
     }, {
+      title: '毛利润(元)',
+      field: 'mlr',
+      amount: true
+    }, {
       title: '应收返点金额(元)',
       field: 'ysfdje',
       amount: true
+    }, {
+      title: '打件日期',
+      field: 'djrq',
+      type: 'date',
+      rangedate: ['djrqStart', 'djrqEnd'],
+      search: true
+    }, {
+      title: '打件日差',
+      field: 'djrc'
+    }, {
+      title: '温州垫资日期',
+      field: 'wzdzrq',
+      type: 'date'
+    }, {
+      title: '发保合回收日期',
+      field: 'fbhhsrq',
+      type: 'date'
+    }, {
+      title: '发保合日差',
+      field: 'fbhrc'
+    }, {
+      title: '抵押日期',
+      field: 'dyrq',
+      type: 'date'
+    }, {
+      title: '抵押日差',
+      field: 'dyrc'
     }];
     return this.props.buildList({
       fields,
       pageCode: 301235,
-      searchParams: { status: '1' }
+      searchParams: { status: '1' },
+      footer: [{
+        title: '本页应收返点金额合计(元)',
+        field: 'ysfdje',
+        type: 'amount'
+      }, {
+        title: '本页贷款金额合计(元)',
+        field: 'dkje',
+        type: 'amount'
+      }, {
+        title: 'v毛利润合计(元)',
+        field: 'mlr',
+        type: 'amount'
+      }]
     });
   }
 }

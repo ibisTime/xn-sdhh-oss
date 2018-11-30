@@ -17,83 +17,127 @@ class HandlingAddEdit extends DetailUtil {
       readonly: true
     }, {
       title: '区域负责人名称',
-      field: 'qyfzrmc',
-      required: true
+      field: 'qyfzrmc'
     }, {
       title: '汽车种类',
       field: 'qczl',
       type: 'select',
-      key: 'car_type',
-      required: true
+      key: 'car_type'
     }, {
       title: '客户姓名',
-      field: 'khmc',
-      required: true
+      field: 'khmc'
     }, {
       title: '贷款金额(元)',
       field: 'dkje',
-      amount: true,
-      required: true
+      value: 0,
+      amount: true
     }, {
       title: '综合利率(%)',
       field: 'zhll',
-      required: true,
       formatter: (v) => v ? (v * 100).toFixed(2) : ''
     }, {
       title: '打款日期',
       field: 'dkrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       title: '渠道费(元)',
       field: 'qdf',
-      amount: true,
-      required: true
+      value: 0,
+      amount: true
     }, {
       title: '绩效(元)',
       field: 'jx',
-      amount: true,
-      required: true
+      value: 0,
+      amount: true
     }, {
       title: '其他利润(元)',
       field: 'qtlr',
-      amount: true,
-      required: true
+      value: 0,
+      amount: true
     }, {
       title: '银行放款日期',
       field: 'yhfkrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       title: '公司回款日期',
       field: 'gshkrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       title: '温州垫资日期',
       field: 'wzdzrq',
-      type: 'date',
-      required: true
+      type: 'date'
     }, {
       title: '打件日期',
       field: 'djrq',
-      type: 'date',
-      required: true
+      type: 'date'
+    }, {
+      title: '打件日差',
+      field: 'djrc',
+      readonly: true,
+      hidden: !this.view
     }, {
       title: '调额日期',
       field: 'terq',
-      type: 'date',
-      required: true
+      type: 'date'
+    }, {
+      title: '放款日差',
+      field: 'fkrc',
+      readonly: true,
+      hidden: !this.view
     }, {
       title: '发保合回收日期',
       field: 'fbhhsrq',
-      type: 'date',
-      required: true
+      type: 'date'
+    }, {
+      title: '发保合日差',
+      field: 'fbhrc',
+      readonly: true,
+      hidden: !this.view
     }, {
       title: '抵押日期',
       field: 'dyrq',
-      type: 'date',
-      required: true
+      type: 'date'
+    }, {
+      title: '抵押日差',
+      field: 'dyrc',
+      readonly: true,
+      hidden: !this.view
+    }, {
+      title: '返点金额(元)',
+      field: 'fdje',
+      amount: true,
+      readonly: true,
+      hidden: !this.view
+    }, {
+      title: '评估费(元)',
+      field: 'pgf',
+      amount: true,
+      readonly: true,
+      hidden: !this.view
+    }, {
+      title: '垫资利息(元)',
+      field: 'dzlx',
+      amount: true,
+      readonly: true,
+      hidden: !this.view
+    }, {
+      title: '应收返点金额(元)',
+      field: 'ysfdje',
+      amount: true,
+      readonly: true,
+      hidden: !this.view
+    }, {
+      title: '保证金(元)',
+      field: 'bzjdke',
+      amount: true,
+      readonly: true,
+      hidden: !this.view
+    }, {
+      title: '毛利润(元)',
+      field: 'mlr',
+      amount: true,
+      readonly: true,
+      hidden: !this.view
     }, {
       title: '备注',
       field: 'remark',
