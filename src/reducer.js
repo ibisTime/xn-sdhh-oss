@@ -11,6 +11,7 @@ import { bizStart } from './redux/biz/start';
 import { bizCashier } from './redux/biz/cashier';
 import { bizAccounting } from './redux/biz/accounting';
 import { bizAfterloan } from './redux/biz/afterloan';
+import { bizBusiness } from './redux/biz/business';
 import { bizHandling } from './redux/biz/handling';
 import { bizFinished } from './redux/biz/finished';
 import { bizParmas } from './redux/biz/params';
@@ -27,6 +28,7 @@ export default combineReducers({
   bizCashier,
   bizAccounting,
   bizAfterloan,
+  bizBusiness,
   bizHandling,
   bizFinished,
   bizParmas

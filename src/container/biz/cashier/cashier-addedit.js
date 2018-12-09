@@ -16,7 +16,7 @@ class CashierAddEdit extends DetailUtil {
       field: 'code',
       readonly: true
     }, {
-      title: '区域负责人名称',
+      title: '区域负责人',
       field: 'qyfzrmc1',
       _keys: ['qyfzrmc'],
       readonly: true
@@ -84,6 +84,14 @@ class CashierAddEdit extends DetailUtil {
       field: 'qtlr',
       value: 0,
       amount: true
+    }, {
+      title: '保证金(元)',
+      field: 'bzjdke',
+      amount: true
+    }, {
+      title: '渠道费发放日期',
+      field: 'qdfffrq',
+      type: 'date'
     }, {
       field: 'yhfkrq',
       type: 'date',

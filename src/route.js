@@ -95,6 +95,16 @@ const ROUTES = [
     path: '/biz/afterloan/addedit',
     component: asyncComponent(() => import('container/biz/afterloan/afterloan-addedit'))
   },
+  // 业务管理-业务查询-全部业务
+  {
+    path: '/biz/business',
+    component: asyncComponent(() => import('container/biz/business/business'))
+  },
+  // 业务管理-业务查询-全部业务-详情
+  {
+    path: '/biz/business/addedit',
+    component: asyncComponent(() => import('container/biz/finished/finished-addedit'))
+  },
   // 业务管理-业务查询-未归档查询
   {
     path: '/biz/handling',

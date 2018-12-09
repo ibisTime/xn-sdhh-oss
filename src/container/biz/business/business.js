@@ -8,18 +8,18 @@ import {
   doFetching,
   cancelFetching,
   setSearchData
-} from '@redux/biz/handling';
+} from '@redux/biz/business';
 import { listWrapper } from 'common/js/build-list';
 
 @listWrapper(
   state => ({
-    ...state.bizHandling,
+    ...state.bizBusiness,
     parentCode: state.menu.subMenuCode
   }),
   { setTableData, clearSearchParam, doFetching, setBtnList,
     cancelFetching, setPagination, setSearchParam, setSearchData }
 )
-class Handling extends React.Component {
+class Business extends React.Component {
   render() {
     const fields = [{
       title: '区域负责人',
@@ -99,6 +99,20 @@ class Handling extends React.Component {
       field: 'mlr',
       amount: true
     }, {
+      title: '是否归档',
+      field: 'status',
+      type: 'select',
+      data: [{
+        key: '0',
+        value: '未归档'
+      }, {
+        key: '1',
+        value: '已归档'
+      }],
+      keyName: 'key',
+      valueName: 'value',
+      search: true
+    }, {
       title: '银行放款日期',
       field: 'yhfkrq',
       type: 'date',
@@ -109,7 +123,6 @@ class Handling extends React.Component {
     return this.props.buildList({
       fields,
       pageCode: 301235,
-      searchParams: { status: '0' },
       footer: [{
         title: '本页应收返点金额合计(元)',
         field: 'ysfdje',
@@ -127,4 +140,4 @@ class Handling extends React.Component {
   }
 }
 
-export default Handling;
+export default Business;

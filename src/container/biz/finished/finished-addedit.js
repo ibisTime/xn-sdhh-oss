@@ -14,7 +14,7 @@ class HandlingAddEdit extends DetailUtil {
       title: '业务编号',
       field: 'code'
     }, {
-      title: '区域负责人名称',
+      title: '区域负责人',
       field: 'qyfzrmc'
     }, {
       title: '汽车种类',
@@ -48,6 +48,14 @@ class HandlingAddEdit extends DetailUtil {
       title: '其他利润(元)',
       field: 'qtlr',
       amount: true
+    }, {
+      title: '保证金(元)',
+      field: 'bzjdke',
+      amount: true
+    }, {
+      title: '渠道费发放日期',
+      field: 'qdfffrq',
+      type: 'date'
     }, {
       title: '银行放款日期',
       field: 'yhfkrq',
@@ -103,10 +111,6 @@ class HandlingAddEdit extends DetailUtil {
     }, {
       title: '应收返点金额(元)',
       field: 'ysfdje',
-      amount: true
-    }, {
-      title: '保证金(元)',
-      field: 'bzjdke',
       amount: true
     }, {
       title: '毛利润(元)',

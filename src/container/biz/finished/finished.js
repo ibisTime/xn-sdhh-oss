@@ -22,72 +22,89 @@ import { listWrapper } from 'common/js/build-list';
 class Finished extends React.Component {
   render() {
     const fields = [{
-      title: '区域负责人名称',
-      field: 'qyfzrmc'
+      title: '区域负责人',
+      rTitle: <div>区域<br/>负责人</div>,
+      field: 'qyfzrmc',
+      search: true
     }, {
       title: '汽车种类',
+      rTitle: <div>汽车<br/>种类</div>,
       field: 'qczl',
       type: 'select',
       key: 'car_type',
       search: true
     }, {
       title: '客户姓名',
-      field: 'khmc'
+      rTitle: <div>客户<br/>姓名</div>,
+      field: 'khmc',
+      search: true
     }, {
       title: '贷款金额(元)',
+      rTitle: <div>贷款<br/>金额(元)</div>,
       field: 'dkje',
       amount: true
     }, {
       title: '综合利率(%)',
+      rTitle: <div>综合<br/>利率(%)</div>,
       field: 'zhll',
       render: (v) => v ? (v * 100).toFixed(2) : ''
     }, {
       title: '打款日期',
+      rTitle: <div>打款<br/>日期</div>,
       field: 'dkrq',
+      type: 'date',
+      rangedate: ['dkrqStart', 'dkrqEnd'],
+      search: true
+    }, {
+      title: '发保合回收日期',
+      rTitle: <div>发保合<br/>回收日期</div>,
+      field: 'fbhhsrq',
       type: 'date'
     }, {
-      title: '银行放款日期',
-      field: 'yhfkrq',
-      type: 'date'
-    }, {
-      title: '垫资利息(元)',
-      field: 'dzlx',
-      amount: true
-    }, {
-      title: '毛利润(元)',
-      field: 'mlr',
-      amount: true
-    }, {
-      title: '应收返点金额(元)',
-      field: 'ysfdje',
-      amount: true
+      title: '发保合日差',
+      rTitle: <div>发保合<br/>日差</div>,
+      field: 'fbhrc'
     }, {
       title: '打件日期',
+      rTitle: <div>打件<br/>日期</div>,
       field: 'djrq',
       type: 'date',
       rangedate: ['djrqStart', 'djrqEnd'],
       search: true
     }, {
       title: '打件日差',
+      rTitle: <div>打件<br/>日差</div>,
       field: 'djrc'
     }, {
       title: '温州垫资日期',
+      rTitle: <div>温州<br/>垫资日期</div>,
       field: 'wzdzrq',
       type: 'date'
     }, {
-      title: '发保合回收日期',
-      field: 'fbhhsrq',
-      type: 'date'
-    }, {
-      title: '发保合日差',
-      field: 'fbhrc'
-    }, {
       title: '抵押日期',
+      rTitle: <div>抵押<br/>日期</div>,
       field: 'dyrq',
       type: 'date'
     }, {
       title: '抵押日差',
+      rTitle: <div>抵押<br/>日差</div>,
       field: 'dyrc'
+    }, {
+      title: '应收返点金额(元)',
+      rTitle: <div>应收<br/>返点金额(元)</div>,
+      field: 'ysfdje',
+      amount: true
+    }, {
+      title: '毛利润(元)',
+      field: 'mlr',
+      amount: true
+    }, {
+      title: '银行放款日期',
+      field: 'yhfkrq',
+      type: 'date',
+      search: true,
+      rangedate: ['yhfkrqStart', 'yhfkrqEnd'],
+      noVisible: true
     }];
     return this.props.buildList({
       fields,
@@ -102,7 +119,7 @@ class Finished extends React.Component {
         field: 'dkje',
         type: 'amount'
       }, {
-        title: 'v毛利润合计(元)',
+        title: '本页毛利润合计(元)',
         field: 'mlr',
         type: 'amount'
       }]

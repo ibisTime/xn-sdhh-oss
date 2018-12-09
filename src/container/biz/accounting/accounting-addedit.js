@@ -16,7 +16,7 @@ class AccountingAddEdit extends DetailUtil {
       field: 'code',
       readonly: true
     }, {
-      title: '区域负责人名称',
+      title: '区域负责人',
       field: 'qyfzrmc1',
       _keys: ['qyfzrmc'],
       readonly: true
@@ -79,24 +79,31 @@ class AccountingAddEdit extends DetailUtil {
       field: 'qtlr',
       hidden: true
     }, {
-      title: '银行放款日期',
-      field: 'yhfkrq',
-      type: 'date'
+      field: 'bzjdke',
+      hidden: true
     }, {
-      title: '公司回款日期',
-      field: 'gshkrq',
+      field: 'qdfffrq',
+      type: 'date',
+      hidden: true
+    }, {
+      title: '打件日期',
+      field: 'djrq',
       type: 'date'
     }, {
       title: '温州垫资日期',
       field: 'wzdzrq',
       type: 'date'
     }, {
-      title: '打件日期',
-      field: 'djrq',
-      type: 'date'
-    }, {
       title: '调额日期',
       field: 'terq',
+      type: 'date'
+    }, {
+      title: '银行放款日期',
+      field: 'yhfkrq',
+      type: 'date'
+    }, {
+      title: '公司回款日期',
+      field: 'gshkrq',
       type: 'date'
     }, {
       field: 'fbhhsrq',

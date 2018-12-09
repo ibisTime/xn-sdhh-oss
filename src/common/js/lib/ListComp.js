@@ -86,7 +86,7 @@ export default class ListComponent extends React.Component {
 
     getFields = (f, callback) => {
         let obj = {
-            title: f.title,
+            title: f.rTitle || f.title,
             dataIndex: f.field
         };
         if (f.type === 'datetime') {

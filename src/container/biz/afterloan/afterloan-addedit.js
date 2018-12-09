@@ -16,7 +16,7 @@ class AfterloanAddEdit extends DetailUtil {
       field: 'code',
       readonly: true
     }, {
-      title: '区域负责人名称',
+      title: '区域负责人',
       field: 'qyfzrmc1',
       _keys: ['qyfzrmc'],
       readonly: true
@@ -77,6 +77,13 @@ class AfterloanAddEdit extends DetailUtil {
       hidden: true
     }, {
       field: 'qtlr',
+      hidden: true
+    }, {
+      field: 'bzjdke',
+      hidden: true
+    }, {
+      field: 'qdfffrq',
+      type: 'date',
       hidden: true
     }, {
       field: 'yhfkrq',

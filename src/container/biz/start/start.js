@@ -22,7 +22,7 @@ import { listWrapper } from 'common/js/build-list';
 class Start extends React.Component {
   render() {
     const fields = [{
-      title: '区域负责人名称',
+      title: '区域负责人',
       field: 'qyfzrmc'
     }, {
       title: '汽车种类',
@@ -32,7 +32,8 @@ class Start extends React.Component {
       search: true
     }, {
       title: '客户姓名',
-      field: 'khmc'
+      field: 'khmc',
+      search: true
     }, {
       title: '贷款金额(元)',
       field: 'dkje',
@@ -54,6 +55,7 @@ class Start extends React.Component {
     return this.props.buildList({
       fields,
       pageCode: 301235,
+      deleteCode: 301221,
       searchParams: { status: '0' }
     });
   }

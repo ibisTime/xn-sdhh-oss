@@ -12,7 +12,7 @@ class StartAddEdit extends DetailUtil {
   }
   render() {
     const fields = [{
-      title: '区域负责人名称',
+      title: '区域负责人',
       field: 'qyfzrmc'
     }, {
       title: '汽车种类',
@@ -43,6 +43,13 @@ class StartAddEdit extends DetailUtil {
       hidden: true
     }, {
       field: 'qtlr',
+      hidden: true
+    }, {
+      field: 'bzjdke',
+      hidden: true
+    }, {
+      field: 'qdfffrq',
+      type: 'date',
       hidden: true
     }, {
       field: 'yhfkrq',

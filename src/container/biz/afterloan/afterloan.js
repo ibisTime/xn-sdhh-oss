@@ -22,17 +22,18 @@ import { listWrapper } from 'common/js/build-list';
 class Afterloan extends React.Component {
   render() {
     const fields = [{
-      title: '区域负责人名称',
-      field: 'qyfzrmc'
+      title: '区域负责人',
+      field: 'qyfzrmc',
+      search: true
     }, {
       title: '汽车种类',
       field: 'qczl',
       type: 'select',
-      key: 'car_type',
-      search: true
+      key: 'car_type'
     }, {
       title: '客户姓名',
-      field: 'khmc'
+      field: 'khmc',
+      search: true
     }, {
       title: '贷款金额(元)',
       field: 'dkje',
