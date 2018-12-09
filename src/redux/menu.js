@@ -179,7 +179,14 @@ function createMenus(newList, result) {
 
 function sortSubMenus(result) {
   for (let key in result.top2SubObj) {
-    result.top2SubObj[key].sort((a, b) => +a.orderNo > +b.orderNo);
+    let arr = result.top2SubObj[key];
+    for (let i = 0; i < arr.length - 1; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+        if (+arr[i].orderNo > +arr[j].orderNo) {
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+      }
+    }
   }
 }
 
