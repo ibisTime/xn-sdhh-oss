@@ -81,6 +81,23 @@ class Finished extends React.Component {
       field: 'wzdzrq',
       type: 'date'
     }, {
+      title: '垫资利息(元)',
+      rTitle: <div>垫资<br/>利息(元)</div>,
+      field: 'dzlx',
+      amount: true
+    }, {
+      title: '银行放款日期',
+      rTitle: <div>银行<br/>放款日期</div>,
+      field: 'yhfkrq',
+      type: 'date',
+      search: true,
+      rangedate: ['yhfkrqStart', 'yhfkrqEnd']
+    }, {
+      title: '公司回款日期',
+      rTitle: <div>公司<br/>回款日期</div>,
+      field: 'gshkrq',
+      type: 'date'
+    }, {
       title: '抵押日期',
       rTitle: <div>抵押<br/>日期</div>,
       field: 'dyrq',
@@ -98,13 +115,6 @@ class Finished extends React.Component {
       title: '毛利润(元)',
       field: 'mlr',
       amount: true
-    }, {
-      title: '银行放款日期',
-      field: 'yhfkrq',
-      type: 'date',
-      search: true,
-      rangedate: ['yhfkrqStart', 'yhfkrqEnd'],
-      noVisible: true
     }];
     return this.props.buildList({
       fields,

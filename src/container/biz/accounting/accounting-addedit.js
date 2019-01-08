@@ -79,7 +79,7 @@ class AccountingAddEdit extends DetailUtil {
       field: 'qtlr',
       hidden: true
     }, {
-      field: 'bzjdke',
+      field: 'ywfxbzj',
       hidden: true
     }, {
       field: 'qdfffrq',

@@ -33,7 +33,8 @@ class Cashier extends React.Component {
       search: true
     }, {
       title: '客户姓名',
-      field: 'khmc'
+      field: 'khmc',
+      search: true
     }, {
       title: '贷款金额(元)',
       field: 'dkje',
@@ -61,8 +62,8 @@ class Cashier extends React.Component {
       field: 'qtlr',
       amount: true
     }, {
-      title: '保证金(元)',
-      field: 'bzjdke',
+      title: '业务风险保证金(元)',
+      field: 'ywfxbzj',
       amount: true
     }, {
       title: '渠道费发放日期',

@@ -58,6 +58,12 @@ class HandlingAddEdit extends DetailUtil {
       title: '保证金(元)',
       field: 'bzjdke',
       amount: true,
+      readonly: true,
+      hidden: !this.view
+    }, {
+      title: '业务风险保证金(元)',
+      field: 'ywfxbzj',
+      amount: true,
       value: 0
     }, {
       title: '渠道费发放日期',

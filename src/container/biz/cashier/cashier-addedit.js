@@ -85,8 +85,8 @@ class CashierAddEdit extends DetailUtil {
       value: 0,
       amount: true
     }, {
-      title: '保证金(元)',
-      field: 'bzjdke',
+      title: '业务风险保证金(元)',
+      field: 'ywfxbzj',
       amount: true
     }, {
       title: '渠道费发放日期',

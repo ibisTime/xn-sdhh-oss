@@ -53,6 +53,10 @@ class HandlingAddEdit extends DetailUtil {
       field: 'bzjdke',
       amount: true
     }, {
+      title: '业务风险保证金(元)',
+      field: 'ywfxbzj',
+      amount: true
+    }, {
       title: '渠道费发放日期',
       field: 'qdfffrq',
       type: 'date'
